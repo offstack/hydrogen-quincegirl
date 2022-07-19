@@ -20,7 +20,7 @@ export default function Blog({pageBy = PAGINATION_SIZE, response}) {
   return (
     <Layout>
       <Seo type="page" data={{title: 'All Journals'}} />
-      <PageHeader heading={BLOG_HANDLE} className="gap-0">
+      <PageHeader heading="Blogs" className="gap-0">
         <Suspense>
           <JournalsGrid pageBy={pageBy} />
         </Suspense>

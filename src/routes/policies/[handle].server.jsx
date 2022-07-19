@@ -8,7 +8,7 @@ import {
 } from '@shopify/hydrogen';
 import {Suspense} from 'react';
 
-import {Button, PageHeader, Section} from '~/components';
+import {PageHeader, Section} from '~/components';
 import {NotFound, Layout} from '~/components/index.server';
 
 export default function Policy({params}) {
@@ -75,15 +75,7 @@ export default function Policy({params}) {
         <PageHeader
           heading={page.title}
           className="grid items-start flex-grow gap-4 md:sticky top-36 md:w-5/12"
-        >
-          <Button
-            className="justify-self-start"
-            variant="inline"
-            to={'/policies'}
-          >
-            &larr; Back to Policies
-          </Button>
-        </PageHeader>
+        ></PageHeader>
         <div className="flex-grow w-full md:w-7/12">
           <div
             dangerouslySetInnerHTML={{__html: page.body}}

@@ -7,7 +7,7 @@ import {
   Link,
 } from '@shopify/hydrogen';
 
-import {PageHeader, Section, Heading} from '~/components';
+import {PageHeader, Section} from '~/components';
 import {Layout, NotFound} from '~/components/index.server';
 
 export default function Policies() {
@@ -51,15 +51,19 @@ export default function Policies() {
   return (
     <Layout>
       <PageHeader heading="Policies" />
-      <Section padding="x" className="mb-24">
+      <Section padding="x" className="mb-24 text-center">
         {policies.map((policy) => {
           if (!policy) {
             return;
           }
           return (
-            <Heading className="font-normal text-heading" key={policy.id}>
-              <Link to={`/policies/${policy.handle}`}>{policy.title}</Link>
-            </Heading>
+            <Link
+              className="text-lg"
+              key={policy.id}
+              to={`/policies/${policy.handle}`}
+            >
+              {policy.title}
+            </Link>
           );
         })}
       </Section>

@@ -14,31 +14,17 @@ const PLACEHOLDERS = {
           mediaContentType: 'IMAGE',
           alt: 'Tracks in the snow leading to a person on a mountain top with a red jacket contrasting to an epic blue horizon with a mountain range in the distance.',
           previewImage: {
-            url: 'https://cdn.shopify.com/s/files/1/0637/6947/7347/collections/PR22021NL_white_f.jpg?v=1657920310',
+            url: 'https://cdn.shopify.com/s/files/1/0637/6947/7347/files/pexels-becerra-govea-photo-5931264-opt_2808x.jpg?v=1651516858',
           },
           id: 'gid://shopify/MediaImage/29259478466616',
           image: {
-            url: 'https://cdn.shopify.com/s/files/1/0637/6947/7347/collections/PR22021NL_white_f.jpg?v=1657920310',
+            url: 'https://cdn.shopify.com/s/files/1/0637/6947/7347/files/pexels-becerra-govea-photo-5931264-opt_2808x.jpg?v=1651516858',
             width: 2500,
             height: 3155,
           },
         },
       },
-      spreadSecondary: {
-        reference: {
-          mediaContentType: 'IMAGE',
-          alt: 'A snowboarder standing on a mountain top in choppy snow, shows off the back of his snowboard which reads Hydrogen in a cursive script.',
-          previewImage: {
-            url: 'https://cdn.shopify.com/s/files/1/0637/6947/7347/collections/PR22027_black_gold_f.jpg?v=1657918851',
-          },
-          id: 'gid://shopify/MediaImage/29259478499384',
-          image: {
-            url: 'https://cdn.shopify.com/s/files/1/0637/6947/7347/collections/PR22027_black_gold_f.jpg?v=1657918851',
-            width: 2500,
-            height: 3155,
-          },
-        },
-      },
+      spreadSecondary: null,
       height: 'full',
       top: true,
       loading: 'eager',
@@ -54,17 +40,31 @@ const PLACEHOLDERS = {
           mediaContentType: 'IMAGE',
           alt: 'Three young women in snowboarding attire embracing and laughing while snow falls around them',
           previewImage: {
-            url: 'https://cdn.shopify.com/s/files/1/0637/6947/7347/collections/PR12263_royal_blue_f.jpg?v=1657656858',
+            url: 'https://cdn.shopify.com/s/files/1/0637/6947/7347/files/hp-pexels-davis-vidal-8467357_3_1512x.jpg?v=1651517117',
           },
           id: 'gid://shopify/MediaImage/29259478302776',
           image: {
-            url: 'https://cdn.shopify.com/s/files/1/0637/6947/7347/collections/PR12263_royal_blue_f.jpg?v=1657656858',
+            url: 'https://cdn.shopify.com/s/files/1/0637/6947/7347/files/hp-pexels-davis-vidal-8467357_3_1512x.jpg?v=1651517117',
             width: 5000,
             height: 2500,
           },
         },
       },
-      spreadSecondary: null,
+      spreadSecondary: {
+        reference: {
+          mediaContentType: 'IMAGE',
+          alt: 'A snowboarder standing on a mountain top in choppy snow, shows off the back of his snowboard which reads Hydrogen in a cursive script.',
+          previewImage: {
+            url: 'https://cdn.shopify.com/s/files/1/0637/6947/7347/files/hp-pexels-davis-vidal-8467357_2_1512x.jpg?v=1651517117',
+          },
+          id: 'gid://shopify/MediaImage/29259478499384',
+          image: {
+            url: 'https://cdn.shopify.com/s/files/1/0637/6947/7347/files/hp-pexels-davis-vidal-8467357_2_1512x.jpg?v=1651517117',
+            width: 2500,
+            height: 3155,
+          },
+        },
+      },
     },
     // tertiaryHero
     {

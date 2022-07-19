@@ -30,7 +30,7 @@ export function FeaturedCollections({data, title = 'Collections', ...props}) {
                       widths={[400, 500, 600, 700, 800, 900]}
                       loaderOptions={{
                         scale: 2,
-                        crop: 'center',
+                        crop: 'top',
                       }}
                     />
                   )}
