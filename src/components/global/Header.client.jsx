@@ -1,4 +1,4 @@
-import {Link, useUrl, useCart} from '@shopify/hydrogen';
+import {Link, useUrl, useCart, Image} from '@shopify/hydrogen';
 import {useWindowScroll} from 'react-use';
 
 import {
@@ -66,8 +66,8 @@ function MobileHeader({countryCode, title, isHome, openCart, openMenu}) {
     button: 'relative flex items-center justify-center w-8 h-8',
     container: `${
       isHome
-        ? 'bg-primary/80 dark:bg-contrast/60 text-contrast dark:text-primary shadow-darkHeader'
-        : 'bg-contrast/80 text-primary'
+        ? 'bg-[#5e20a4] dark:bg-[#5e20a4] text-white shadow-darkHeader'
+        : 'bg-[#5e20a4] text-white'
     } ${
       y > 50 && !isHome ? 'shadow-lightHeader ' : ''
     }flex lg:hidden items-center h-nav sticky backdrop-blur-lg z-40 top-0 justify-between w-full leading-none gap-4 px-4 md:px-8`,
@@ -100,14 +100,11 @@ function MobileHeader({countryCode, title, isHome, openCart, openMenu}) {
         </form>
       </div>
 
-      <Link
-        className="flex items-center self-stretch leading-[3rem] md:leading-[4rem] justify-center flex-grow w-full h-full"
-        to="/"
-      >
-        <Heading className="font-bold text-center" as={isHome ? 'h1' : 'h2'}>
-          {title}
-        </Heading>
-      </Link>
+      <div>
+        <Link to="/">
+          <Image width="140" height="32" src="/images/logo.png" alt="logo" />
+        </Link>
+      </div>
 
       <div className="flex items-center justify-end w-full gap-4">
         <Link to={'/account'} className={styles.button}>
@@ -130,8 +127,8 @@ function DesktopHeader({countryCode, isHome, menu, openCart, title}) {
       'relative flex items-center justify-center w-8 h-8 focus:ring-primary/5',
     container: `${
       isHome
-        ? 'bg-primary/80 dark:bg-contrast/60 text-contrast dark:text-primary shadow-darkHeader'
-        : 'bg-contrast/80 text-primary'
+        ? 'bg-[#5e20a4] dark:bg-[#5e20a4] text-white shadow-darkHeader'
+        : 'bg-[#5e20a4] text-white'
     } ${
       y > 50 && !isHome ? 'shadow-lightHeader ' : ''
     }hidden h-nav lg:flex items-center sticky transition duration-300 backdrop-blur-lg z-40 top-0 justify-between w-full leading-none gap-8 px-12 py-8`,
@@ -140,9 +137,9 @@ function DesktopHeader({countryCode, isHome, menu, openCart, title}) {
   return (
     <header role="banner" className={styles.container}>
       <div className="flex gap-12">
-        <Link className={`font-bold`} to="/">
+        {/* <Link className={`font-bold`} to="/">
           {title}
-        </Link>
+        </Link> */}
         <nav className="flex gap-8">
           {/* Top level menu items */}
           {(menu?.items || []).map((item) => (
@@ -151,6 +148,11 @@ function DesktopHeader({countryCode, isHome, menu, openCart, title}) {
             </Link>
           ))}
         </nav>
+      </div>
+      <div>
+        <Link to="/">
+          <Image width="140" height="32" src="/images/logo.png" alt="logo" />
+        </Link>
       </div>
       <div className="flex items-center gap-1">
         <form
