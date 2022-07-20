@@ -44,7 +44,7 @@ export default function Page({params}) {
         <PageHeader heading={page.title}>
           <div
             dangerouslySetInnerHTML={{__html: page.body}}
-            className="prose dark:prose-invert xl:max-w-[60%]"
+            className="prose xl:max-w-[60%]"
           />
         </PageHeader>
       }

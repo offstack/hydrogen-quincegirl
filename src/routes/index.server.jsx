@@ -136,6 +136,7 @@ const HOMEPAGE_CONTENT_QUERY = gql`
     }
     featuredCollections: collections(
       first: 3
+      reverse: true
       query: "collection_type:smart"
       sortKey: UPDATED_AT
     ) {

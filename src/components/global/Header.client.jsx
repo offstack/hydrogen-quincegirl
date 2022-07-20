@@ -88,9 +88,7 @@ function MobileHeader({countryCode, title, isHome, openCart, openMenu}) {
           </button>
           <Input
             className={
-              isHome
-                ? 'focus:border-contrast/20 dark:focus:border-primary/20'
-                : 'focus:border-primary/20'
+              isHome ? 'focus:border-contrast/20' : 'focus:border-primary/20'
             }
             type="search"
             variant="minisearch"
@@ -102,7 +100,12 @@ function MobileHeader({countryCode, title, isHome, openCart, openMenu}) {
 
       <div>
         <Link to="/">
-          <Image width="140" height="32" src="/assets/images/logo.png" alt="logo" />
+          <Image
+            width="140"
+            height="32"
+            src="/assets/images/logo.png"
+            alt="logo"
+          />
         </Link>
       </div>
 
@@ -140,30 +143,49 @@ function DesktopHeader({countryCode, isHome, menu, openCart, title}) {
         {/* <Link className={`font-bold`} to="/">
           {title}
         </Link> */}
-        <nav className="flex gap-8">
+        <nav className="flex gap-8 tracking-[0.2em]">
           {/* Top level menu items */}
           {(menu?.items || []).map((item) => (
-            <Link key={item.id} to={item.to} target={item.target}>
-              {item.title}
-            </Link>
+            <div key={item.id} className="group">
+              <Link
+                to={item.to}
+                target={item.target}
+                className="group-hover:underline"
+              >
+                {item.title.toUpperCase()}
+              </Link>
+              <div className="absolute pt-3 w-[250px] text-black  tracking-[0] h-0 overflow-hidden group-hover:h-[160px] transition-all">
+                {item.items.map((v, i) => (
+                  <Link to={v.to} key={i}>
+                    <div className="py-4 pl-4 bg-white hover:bg-gray-100">
+                      {v.title}
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            </div>
           ))}
         </nav>
       </div>
       <div>
         <Link to="/">
-          <Image width="140" height="32" src="/assets/images/logo.png" alt="logo" />
+          <Image
+            className=""
+            width="140"
+            height="32"
+            src="/assets/images/logo.png"
+            alt="logo"
+          />
         </Link>
       </div>
-      <div className="flex items-center gap-1">
+      <div className="flex items-center justify-end gap-1 min-w-[394px]">
         <form
           action={`/${countryCode ? countryCode + '/' : ''}search`}
           className="flex items-center gap-2"
         >
           <Input
             className={
-              isHome
-                ? 'focus:border-contrast/20 dark:focus:border-primary/20'
-                : 'focus:border-primary/20'
+              isHome ? 'focus:border-contrast/20' : 'focus:border-primary/20'
             }
             type="search"
             variant="minisearch"
@@ -186,7 +208,7 @@ function DesktopHeader({countryCode, isHome, menu, openCart, title}) {
   );
 }
 
-function CartBadge({dark}) {
+function CartBadge() {
   const {totalQuantity} = useCart();
 
   if (totalQuantity < 1) {
@@ -194,11 +216,7 @@ function CartBadge({dark}) {
   }
   return (
     <div
-      className={`${
-        dark
-          ? 'text-primary bg-contrast dark:text-contrast dark:bg-primary'
-          : 'text-contrast bg-primary'
-      } absolute bottom-1 right-1 text-[0.625rem] font-medium subpixel-antialiased h-3 min-w-[0.75rem] flex items-center justify-center leading-none text-center rounded-full w-auto px-[0.125rem] pb-px`}
+      className={`${'text-contrast bg-primary'} absolute bottom-1 right-1 text-[0.625rem] font-medium subpixel-antialiased h-3 min-w-[0.75rem] flex items-center justify-center leading-none text-center rounded-full w-auto px-[0.125rem] pb-px`}
     >
       <span>{totalQuantity}</span>
     </div>

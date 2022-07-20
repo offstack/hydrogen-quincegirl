@@ -20,8 +20,12 @@ export function FooterMenu() {
           {/* @ts-expect-error @headlessui/react incompatibility with node16 resolution */}
           <>
             <Disclosure.Button className="text-left md:cursor-default">
-              <Heading className="flex justify-between" size="lead" as="h3">
-                About Us
+              <Heading
+                className="flex justify-between tracking-[0.2em]"
+                size="lead"
+                as="h3"
+              >
+                ABOUT US
               </Heading>
             </Disclosure.Button>
 
@@ -57,8 +61,12 @@ export function FooterMenu() {
           {/* @ts-expect-error @headlessui/react incompatibility with node16 resolution */}
           <>
             <Disclosure.Button className="text-left md:cursor-default">
-              <Heading className="flex justify-between" size="lead" as="h3">
-                Collections
+              <Heading
+                className="flex justify-between tracking-[0.2em]"
+                size="lead"
+                as="h3"
+              >
+                COLLECTIONS
               </Heading>
             </Disclosure.Button>
 
