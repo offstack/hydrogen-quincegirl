@@ -102,7 +102,7 @@ function MobileHeader({countryCode, title, isHome, openCart, openMenu}) {
 
       <div>
         <Link to="/">
-          <Image width="140" height="32" src="/images/logo.png" alt="logo" />
+          <Image width="140" height="32" src="/assets/images/logo.png" alt="logo" />
         </Link>
       </div>
 
@@ -151,7 +151,7 @@ function DesktopHeader({countryCode, isHome, menu, openCart, title}) {
       </div>
       <div>
         <Link to="/">
-          <Image width="140" height="32" src="/images/logo.png" alt="logo" />
+          <Image width="140" height="32" src="/assets/images/logo.png" alt="logo" />
         </Link>
       </div>
       <div className="flex items-center gap-1">
