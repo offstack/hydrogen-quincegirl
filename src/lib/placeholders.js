@@ -14,11 +14,11 @@ const PLACEHOLDERS = {
           mediaContentType: 'IMAGE',
           alt: 'Tracks in the snow leading to a person on a mountain top with a red jacket contrasting to an epic blue horizon with a mountain range in the distance.',
           previewImage: {
-            url: 'https://cdn.shopify.com/s/files/1/0637/6947/7347/files/pexels-becerra-govea-photo-5931264-opt_2808x.jpg?v=1651516858',
+            url: 'https://hydrogenv1.netlify.app/assets/images/hero.webp',
           },
           id: 'gid://shopify/MediaImage/29259478466616',
           image: {
-            url: 'https://cdn.shopify.com/s/files/1/0637/6947/7347/files/pexels-becerra-govea-photo-5931264-opt_2808x.jpg?v=1651516858',
+            url: 'https://hydrogenv1.netlify.app/assets/images/hero.webp',
             width: 2500,
             height: 3155,
           },

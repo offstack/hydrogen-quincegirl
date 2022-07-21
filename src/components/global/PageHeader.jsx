@@ -22,9 +22,7 @@ export function PageHeader({
   return (
     <header {...props} className={styles}>
       {heading && (
-        <Heading as="h1" width="narrow" size="heading" className="inline-block">
-          {heading}
-        </Heading>
+        <h1 className="text-[26px] lg:text-[31px] font-tenor text-center">{heading}</h1>
       )}
       {children}
     </header>

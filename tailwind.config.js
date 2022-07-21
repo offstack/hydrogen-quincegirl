@@ -48,6 +48,7 @@ module.exports = {
       fontFamily: {
         sans: 'Twentieth Century',
         serif: 'Twentieth Century',
+        tenor: 'Tenor Sans',
       },
       fontSize: {
         display: ['var(--font-size-display)', '1.1'],

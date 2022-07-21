@@ -141,7 +141,7 @@ const faqsLists = {
 export function Faqs() {
   return (
     <div className="p-10 text-center">
-      <h1 className="whitespace-pre-wrap max-w-prose-narrow font-bold text-heading inline-block mb-[120px]">
+      <h1 className="text-[26px] lg:text-[31px] font-tenor text-center mt-[10px] mb-[120px]">
         FREQUENTLY ASKED QUESTIONS
       </h1>
       <div className="overflow-hidden flex">

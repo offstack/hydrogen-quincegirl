@@ -60,6 +60,7 @@ function HomepageContent() {
       {primaryHero && (
         <Hero {...primaryHero} height="full" top loading="eager" />
       )}
+      <Intro />
       <ProductSwimlane
         data={featuredProducts.nodes}
         title="Featured Products"
@@ -70,6 +71,7 @@ function HomepageContent() {
         data={featuredCollections.nodes}
         title="Collections"
       />
+      <Promotion />
       {tertiaryHero && <Hero {...tertiaryHero} />}
     </>
   );
@@ -168,3 +170,61 @@ const HOMEPAGE_SEO_QUERY = gql`
     }
   }
 `;
+
+function Intro() {
+  return (
+    <div className="mt-[40px] flex">
+      <div className="m-auto max-w-[90%] lg:max-w-[920px]">
+        <h2 className="font-tenor text-[26px] lg:text-[31px] text-center mb-[30px]">
+          QUINCEAÑERA
+        </h2>
+        <p className="text-[1.3em] text-center justify-center content-center">
+          Quinceanera is an important day for a young lady who is reaching the
+          age of 15. Traditionally, the quinceanera is a day when a young lady
+          celebrates her fifteenth birthday by having a special party with her
+          friends and family. There are many things that can happen on the
+          quinceanera, from a small gathering with close friends to a formal
+          banquet with relatives from all over the world.
+        </p>
+      </div>
+    </div>
+  );
+}
+
+function Promotion() {
+  return (
+    <div className="mb-[40px] mt-[40px] flex">
+      <div className="m-auto max-w-[90%] lg:max-w-[920px]">
+        <h2 className="font-tenor text-[26px] lg:text-[31px] text-center mb-[30px]">
+          A QUINCEAÑERA DRESS FOR YOUR SWEET 15 BIRTHDAY
+        </h2>
+        <p className="text-[1.3em] text-center justify-center content-center">
+          Discover the perfect quinceañera dress at QuinceGirl. From traditional
+          quinceañera dresses to cute and trendy quinceañera gowns, you’re sure
+          to find a style that feels like it was made just for you. Shop this
+          selection of quinceañera dresses online to discover gorgeous designs
+          by the top designers, like Ariana Vara’s Princesa collection. In so
+          many hermosa colors, styles, and fabrics, these quince dresses are
+          sure to impress. Stand out in a power color when you wear a red
+          quinceañera dress, or go for a classic look with a traditional white
+          or pink quinceañera dress. There are royal blue quinceañera dresses
+          for a regal look and rose gold quince dresses for a softly sparkling
+          princess vibe. Want a quince dress with dramatic flair? Check out the
+          quinceañera dresses with removable capes or matching color lights.
+          From petite quince dresses to plus-size quinceañera dresses,
+          QuinceGirl features styles that flatter all figures and sizes.
+          Celebrate your sweet 15 by wearing a stunning quinceañera gown from
+          QuinceGirl.
+        </p>
+        <h2 className="font-tenor text-[26px] lg:text-[31px] text-center my-[30px]">
+          DAMAS DRESSES FOR EVERY QUINCEAÑERA COURT
+        </h2>
+        <p className="text-[1.3em] text-center justify-center content-center">
+          Use this text to share information about your brand with your
+          customers. Describe a product, share announcements, or welcome
+          customers to your store.
+        </p>
+      </div>
+    </div>
+  );
+}

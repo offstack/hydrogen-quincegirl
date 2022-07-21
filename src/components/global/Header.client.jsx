@@ -156,7 +156,12 @@ function DesktopHeader({countryCode, isHome, menu, openCart, title}) {
               </Link>
               <div className="absolute pt-3 w-[250px] text-black  tracking-[0] h-0 overflow-hidden group-hover:h-[160px] transition-all">
                 {item.items.map((v, i) => (
-                  <Link to={v.to} key={i}>
+                  <Link
+                    to={
+                      v.to === '/pages/quinceanera-shop-by-color' ? '/collections' : v.to
+                    }
+                    key={i}
+                  >
                     <div className="py-4 pl-4 bg-white hover:bg-gray-100">
                       {v.title}
                     </div>

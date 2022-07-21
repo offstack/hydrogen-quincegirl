@@ -9,7 +9,8 @@ export function FeaturedCollections({data, title = 'Collections', ...props}) {
   if (!haveCollections) return null;
 
   return (
-    <Section {...props} heading={title}>
+    <Section {...props} heading={''}>
+      <h2 className="font-tenor text-[26px] lg:text-[31px] text-center">{title}</h2>
       <Grid items={items}>
         {data.map((collection) => {
           if (!collection?.image) {
