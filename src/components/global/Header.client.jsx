@@ -75,7 +75,7 @@ function MobileHeader({countryCode, title, isHome, openCart, openMenu}) {
 
   return (
     <header role="banner" className={styles.container}>
-      <div className="flex items-center justify-start w-full gap-4">
+      <div className="flex items-center justify-start w-[30%] gap-4">
         <button onClick={openMenu} className={styles.button}>
           <IconMenu />
         </button>
@@ -109,7 +109,7 @@ function MobileHeader({countryCode, title, isHome, openCart, openMenu}) {
         </Link>
       </div>
 
-      <div className="flex items-center justify-end w-full gap-4">
+      <div className="flex items-center justify-end w-[30%] gap-4">
         <Link to={'/account'} className={styles.button}>
           <IconAccount />
         </Link>
