@@ -14,14 +14,14 @@ export function Hero({
   top,
 }) {
   return (
-    <Link to={`/collections/${handle}`}>
+    <Link to={`/collections/${spreadSecondary?.reference ? '' : handle}`}>
       <section
         className={`relative justify-end flex flex-col w-full ${
           top && '-mt-nav'
         } ${
           height === 'full'
             ? 'h-screen'
-            : 'aspect-[4/5] sm:aspect-square md:aspect-[5/4] lg:aspect-[3/2] xl:aspect-[2/1]'
+            : 'aspect-[4/5] sm:aspect-square md:aspect-[5/4] lg:aspect-[3/2] xl:aspect-[2/1] max-h-[700px]'
         }`}
       >
         <div className="absolute inset-0 grid flex-grow grid-flow-col pointer-events-none auto-cols-fr -z-10 content-stretch overflow-clip">
@@ -42,6 +42,7 @@ export function Hero({
                 width={spreadSecondary?.reference ? 375 : 750}
                 data={spread.reference}
                 loading={loading}
+                havesecondary={!!spreadSecondary?.reference}
               />
             </div>
           )}
@@ -52,29 +53,57 @@ export function Hero({
                 widths={[450, 700]}
                 width={375}
                 data={spreadSecondary.reference}
+                havesecondary={true}
               />
             </div>
           )}
         </div>
-        <div className="flex flex-col items-baseline justify-between gap-4 px-6 py-8 sm:px-8 md:px-12 bg-gradient-to-t from-primary/60 text-contrast">
-          {heading?.value && (
-            <Heading format as="h2" size="display" className="max-w-md">
-              {heading.value}
-            </Heading>
-          )}
-          {byline?.value && (
-            <Text format width="narrow" as="p" size="lead">
-              {byline.value}
-            </Text>
-          )}
-          {cta?.value && <Text size="lead">{cta.value}</Text>}
-        </div>
+        {!spreadSecondary?.reference && (
+          <div className="flex flex-col items-baseline justify-between gap-4 px-6 py-8 sm:px-8 md:px-12 bg-gradient-to-t from-primary/60 text-contrast">
+            {heading?.value && (
+              <Heading format as="h2" size="display" className="max-w-md">
+                {heading.value}
+              </Heading>
+            )}
+            {byline?.value && (
+              <Text format width="narrow" as="p" size="lead">
+                {byline.value}
+              </Text>
+            )}
+            {cta?.value && <Text size="lead">{cta.value}</Text>}
+          </div>
+        )}
+
+        {spreadSecondary?.reference && (
+          <div className="absolute top-0 w-full h-full flex">
+            <Link to="/" className="p-3 w-full h-full bg-black/20">
+              <div className="border-2 border-white h-full flex">
+                <SpreadCopy color="white" />
+              </div>
+            </Link>
+            <Link to="/" className="p-3 hidden md:block w-full h-full">
+              <div className="h-full relative">
+                <div className="bg-white absolute bottom-0 w-full p-[2em]">
+                  <SpreadCopy color="black" />
+                </div>
+              </div>
+            </Link>
+          </div>
+        )}
       </section>
     </Link>
   );
 }
 
-function SpreadMedia({data, loading, scale, sizes, width, widths}) {
+function SpreadMedia({
+  data,
+  loading,
+  scale,
+  sizes,
+  width,
+  widths,
+  havesecondary,
+}) {
   if (data.mediaContentType === 'VIDEO') {
     return (
       <Video
@@ -97,7 +126,9 @@ function SpreadMedia({data, loading, scale, sizes, width, widths}) {
         widths={widths}
         sizes={sizes}
         alt={data.alt || 'Marketing Banner Image'}
-        className="block object-cover w-full h-full"
+        className={`block object-cover w-full h-full ${
+          havesecondary && 'xl:-mt-28'
+        }`}
         // @ts-ignore
         data={data.image}
         loading={loading}
@@ -108,4 +139,38 @@ function SpreadMedia({data, loading, scale, sizes, width, widths}) {
   }
 
   return null;
+}
+
+function SpreadCopy({color}) {
+  return (
+    <div
+      className={`m-auto text-${color} tracking-[.3em] text-center uppercase`}
+    >
+      <h3 className="text-[1em] mb-3">LIMITED TIME</h3>
+      <h2 className="text-[2.1em] mb-3 leading-[1.1]">
+        Announce your
+        <br />
+        promotion
+      </h2>
+      <p className="text-[1em] tracking-normal normal-case mb-3">
+        Include the smaller details of your promotion in text below the title.
+      </p>
+      <div className="flex justify-center space-x-4">
+        <div
+          className={`w-40 h-12 border-2 border-${color} ${
+            color === 'black' && 'bg-black text-white'
+          } flex`}
+        >
+          <p className="m-auto">Shop This</p>
+        </div>
+        <div
+          className={`w-40 h-12 border-2 border-${color} ${
+            color === 'black' && 'bg-black text-white'
+          } flex`}
+        >
+          <p className="m-auto">Shop All</p>
+        </div>
+      </div>
+    </div>
+  );
 }

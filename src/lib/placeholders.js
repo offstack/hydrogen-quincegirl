@@ -40,11 +40,11 @@ const PLACEHOLDERS = {
           mediaContentType: 'IMAGE',
           alt: 'Three young women in snowboarding attire embracing and laughing while snow falls around them',
           previewImage: {
-            url: 'https://cdn.shopify.com/s/files/1/0637/6947/7347/products/PR12263_royal_blue_f.jpg?v=1649442721&width=3200&height=3200&crop=top',
+            url: 'https://cdn.shopify.com/s/files/1/0637/6947/7347/files/hp-pexels-davis-vidal-8467357_3_1512x.jpg?v=1651517117',
           },
           id: 'gid://shopify/MediaImage/29259478302776',
           image: {
-            url: 'https://cdn.shopify.com/s/files/1/0637/6947/7347/products/PR12263_royal_blue_f.jpg?v=1649442721&width=3200&height=3200&crop=top',
+            url: 'https://cdn.shopify.com/s/files/1/0637/6947/7347/files/hp-pexels-davis-vidal-8467357_3_1512x.jpg?v=1651517117',
             width: 5000,
             height: 2500,
           },
@@ -55,11 +55,11 @@ const PLACEHOLDERS = {
           mediaContentType: 'IMAGE',
           alt: 'A snowboarder standing on a mountain top in choppy snow, shows off the back of his snowboard which reads Hydrogen in a cursive script.',
           previewImage: {
-            url: 'https://cdn.shopify.com/s/files/1/0637/6947/7347/products/PR22029_royal_blue_gold_f_d-copy.jpg?v=1658169184&width=3200&height=3200&crop=center',
+            url: 'https://cdn.shopify.com/s/files/1/0637/6947/7347/files/hp-pexels-davis-vidal-8467357_2_1512x.jpg?v=1651517117',
           },
           id: 'gid://shopify/MediaImage/29259478499384',
           image: {
-            url: 'https://cdn.shopify.com/s/files/1/0637/6947/7347/products/PR22029_royal_blue_gold_f_d-copy.jpg?v=1658169184&width=3200&height=3200&crop=center',
+            url: 'https://cdn.shopify.com/s/files/1/0637/6947/7347/files/hp-pexels-davis-vidal-8467357_2_1512x.jpg?v=1651517117',
             width: 2500,
             height: 3155,
           },
