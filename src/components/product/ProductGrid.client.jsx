@@ -81,6 +81,7 @@ export function ProductGrid({url, collection}) {
           <ProductCard
             key={product.id}
             product={product}
+            collection={collection.title}
             loading={getImageLoadingPriority(i)}
           />
         ))}

@@ -11,16 +11,38 @@ import {Text} from '~/components';
 import {isDiscounted, isNewArrival} from '~/lib/utils';
 import {getProductPlaceholder} from '~/lib/placeholders';
 
-export function ProductCard({product, label, className, loading, onClick}) {
+export function ProductCard({
+  product,
+  label,
+  className,
+  loading,
+  onClick,
+  collection,
+}) {
   let cardLabel;
 
   const cardData = product?.variants ? product : getProductPlaceholder();
 
-  const {
+  let {
     image,
     priceV2: price,
     compareAtPriceV2: compareAtPrice,
   } = flattenConnection(cardData?.variants)[0] || {};
+
+  const variants = flattenConnection(cardData?.variants);
+  let isVariantColor = false;
+  let colorList = ['Blue', 'Red', 'Black', 'Purple', 'Pink', 'Yellow', 'White'];
+  let color = null;
+  colorList.map((v) => {
+    if (collection?.includes(v)) {
+      isVariantColor = true;
+      color = v.toLowerCase();
+    }
+  });
+  let variantImage = null;
+  if (variants?.length && isVariantColor)
+    variantImage = getColorImage(color, variants);
+  if (variantImage) image = variantImage;
 
   if (label) {
     cardLabel = label;
@@ -98,3 +120,34 @@ function CompareAtPrice({data, className}) {
     </span>
   );
 }
+
+const getColorImage = (color, variants) => {
+  const blue = ['blue', 'teal', 'turquoise'];
+  const red = ['red', 'wine', 'ruby'];
+  const black = ['black', 'ebony', 'onyx'];
+  const purple = ['purple', 'lilac', 'lavender'];
+  const pink = ['pink', 'rose', 'blush'];
+  const yellow = ['yellow', 'butter', 'lemon'];
+  const white = ['white', 'ivory', 'alabaster'];
+
+  let arrColor = [];
+  if (color === 'blue') arrColor = blue;
+  if (color === 'red') arrColor = red;
+  if (color === 'black') arrColor = black;
+  if (color === 'purple') arrColor = purple;
+  if (color === 'pink') arrColor = pink;
+  if (color === 'yellow') arrColor = yellow;
+  if (color === 'white') arrColor = white;
+
+  let image = null;
+  variants.map((v) => {
+    arrColor.map((c) => {
+      if (v.image?.url?.includes(c)) {
+        image = v.image;
+        return;
+      }
+    });
+    if (image) return;
+  });
+  return image;
+};
