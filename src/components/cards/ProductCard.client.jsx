@@ -140,14 +140,15 @@ const getColorImage = (color, variants) => {
   if (color === 'white') arrColor = white;
 
   let image = null;
-  variants.map((v) => {
-    arrColor.map((c) => {
+
+  for (const v of variants) {
+    for (const c of arrColor) {
       if (v.image?.url?.includes(c)) {
         image = v.image;
-        return;
+        return v.image;
       }
-    });
-    if (image) return;
-  });
+    }
+    if (image) return image;
+  }
   return image;
 };
