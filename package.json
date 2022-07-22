@@ -6,12 +6,13 @@
   "private": true,
   "scripts": {
     "dev": "shopify hydrogen dev",
-    "build": "shopify hydrogen build",
+    "build": "shopify hydrogen build && npm run _encrypt",
     "preview": "shopify hydrogen preview",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx src",
     "lint-ts": "tsc --noEmit",
     "test": "WATCH=true vitest",
-    "test:ci": "yarn build -t node && vitest run"
+    "test:ci": "yarn build -t node && vitest run",
+    "_encrypt": "npx staticrypt dist/client/index.html demosite -o dist/client/index.html"
   },
   "devDependencies": {
     "@netlify/hydrogen-platform": "^1.0.0",
